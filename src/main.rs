@@ -142,25 +142,41 @@
 //     }
 // }
 
-struct User {
-    name: String,
-    status: Status,
-}
+// struct User {
+//     name: String,
+//     status: Status,
+// }
 
-enum Status {
-    Traider,
-    Investor,
-    Blocked,
+// enum Status {
+//     Traider,
+//     Investor,
+//     Blocked,
+// }
+
+// fn main() {
+//     let user: User = User {
+//         name: String::from("Seydou"),
+//         status: Status::Traider,
+//     };
+//     match user.status {
+//         Status::Traider => println!("{} est Traider", user.name),
+//         Status::Investor => println!("{} est Investor", user.name),
+//         Status::Blocked => println!("{} est Blocked", user.name),
+//     }
+// }
+
+// fn main() {
+//     let s1 = String::from("hello");
+//     let s2 = s1; //s1 is moved in s2.
+//     println!("s2 = {}", s2);
+//     //println!("s1 = {}", s1); // not working
+// }
+
+fn print_value(s: &String) {
+    println!("{}", s);
 }
 
 fn main() {
-    let user: User = User {
-        name: String::from("Seydou"),
-        status: Status::Traider,
-    };
-    match user.status {
-        Status::Traider => println!("{} est Traider", user.name),
-        Status::Investor => println!("{} est Investor", user.name),
-        Status::Blocked => println!("{} est Blocked", user.name),
-    }
+    let s1: String = String::from("Seydou");
+    print_value(&s1);
 }
