@@ -173,10 +173,18 @@
 // }
 
 fn print_value(s: &String) {
+    //borrowing en lecture seule
     println!("{}", s);
+}
+
+fn modify(s: &mut String) {
+    s.push_str("wold");
 }
 
 fn main() {
     let s1: String = String::from("Seydou");
+    let mut s: String = String::from("hello");
+    print_value(&s1);
+    modify(&mut s);
     print_value(&s1);
 }
