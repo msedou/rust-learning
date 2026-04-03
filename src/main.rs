@@ -172,19 +172,35 @@
 //     //println!("s1 = {}", s1); // not working
 // }
 
-fn print_value(s: &String) {
-    //borrowing en lecture seule
-    println!("{}", s);
+// fn print_value(s: &String) {
+//     //borrowing en lecture seule
+//     println!("{}", s);
+// }
+
+// fn modify(s: &mut String) {
+//     s.push_str("wold");
+// }
+
+// fn main() {
+//     let s1: String = String::from("Seydou");
+//     let mut s: String = String::from("hello");
+//     print_value(&s1);
+//     modify(&mut s);
+//     print_value(&s1);
+// }
+
+struct User {
+    name: String,
 }
 
-fn modify(s: &mut String) {
-    s.push_str("wold");
+fn display(user: &User) {
+    println!("Name {}", user.name);
 }
 
 fn main() {
-    let s1: String = String::from("Seydou");
-    let mut s: String = String::from("hello");
-    print_value(&s1);
-    modify(&mut s);
-    print_value(&s1);
+    let user: User = User {
+        name: String::from("Seydou"),
+    };
+    display(&user);
+    println!("Name {}", user.name);
 }
