@@ -113,31 +113,54 @@
 //     }
 // }
 
+// struct User {
+//     name: String,
+//     age: u32,
+//     status: Status,
+// }
+
+// enum Status {
+//     Active,
+//     Inactive,
+//     Banned,
+//     Suspended,
+//     Deleted,
+// }
+
+// fn main() {
+//     let user1: User = User {
+//         name: String::from("Seydou"),
+//         age: 25,
+//         status: Status::Active,
+//     };
+//     match user1.status {
+//         Status::Active => println!("{} est Active", user1.name),
+//         Status::Inactive => println!("{} est Inactive", user1.name),
+//         Status::Banned => println!("{} est Banned", user1.name),
+//         Status::Suspended => println!("{} est Suspended", user1.name),
+//         Status::Deleted => println!("{} est Deleted", user1.name),
+//     }
+// }
+
 struct User {
     name: String,
-    age: u32,
     status: Status,
 }
 
 enum Status {
-    Active,
-    Inactive,
-    Banned,
-    Suspended,
-    Deleted,
+    Traider,
+    Investor,
+    Blocked,
 }
 
 fn main() {
-    let user1: User = User {
+    let user: User = User {
         name: String::from("Seydou"),
-        age: 25,
-        status: Status::Active,
+        status: Status::Traider,
     };
-    match user1.status {
-        Status::Active => println!("{} est Active", user1.name),
-        Status::Inactive => println!("{} est Inactive", user1.name),
-        Status::Banned => println!("{} est Banned", user1.name),
-        Status::Suspended => println!("{} est Suspended", user1.name),
-        Status::Deleted => println!("{} est Deleted", user1.name),
+    match user.status {
+        Status::Traider => println!("{} est Traider", user.name),
+        Status::Investor => println!("{} est Investor", user.name),
+        Status::Blocked => println!("{} est Blocked", user.name),
     }
 }
