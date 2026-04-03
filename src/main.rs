@@ -72,24 +72,72 @@
 //     }
 // }
 
+// struct User {
+//     name: String,
+//     age: i32,
+//     active: bool,
+// }
+
+// fn main() {
+//     let user1: User = User {
+//         name: String::from("Seydou"),
+//         age: i32::from(25),
+//         active: bool::from(true),
+//     };
+//     // println!("Name {}", user1.name);
+//     user1.display();
+// }
+
+// impl User {
+//     fn display(&self) {
+//         println!("Name {}, age {}", self.age, self.name);
+//     }
+// }
+
+// enum Status {
+//     Active,
+//     Inactive,
+//     Banned,
+//     Suspended,
+//     Deleted,
+// }
+
+// fn main() {
+//     let status: Status = Status::Active;
+//     match status {
+//         Status::Active => println!("Active"),
+//         Status::Inactive => println!("Inactive"),
+//         Status::Banned => println!("Banned"),
+//         Status::Suspended => println!("Suspended"),
+//         Status::Deleted => println!("Deleted"),
+//     }
+// }
+
 struct User {
     name: String,
-    age: i32,
-    active: bool,
+    age: u32,
+    status: Status,
+}
+
+enum Status {
+    Active,
+    Inactive,
+    Banned,
+    Suspended,
+    Deleted,
 }
 
 fn main() {
     let user1: User = User {
         name: String::from("Seydou"),
-        age: i32::from(25),
-        active: bool::from(true),
+        age: 25,
+        status: Status::Active,
     };
-    // println!("Name {}", user1.name);
-    user1.display();
-}
-
-impl User {
-    fn display(&self) {
-        println!("Name {}, age {}", self.age, self.name);
+    match user1.status {
+        Status::Active => println!("{} est Active", user1.name),
+        Status::Inactive => println!("{} est Inactive", user1.name),
+        Status::Banned => println!("{} est Banned", user1.name),
+        Status::Suspended => println!("{} est Suspended", user1.name),
+        Status::Deleted => println!("{} est Deleted", user1.name),
     }
 }
