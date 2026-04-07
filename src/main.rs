@@ -189,18 +189,25 @@
 //     print_value(&s1);
 // }
 
-struct User {
-    name: String,
-}
+// struct User {
+//     name: String,
+// }
 
-fn display(user: &User) {
-    println!("Name {}", user.name);
-}
+// fn display(user: &User) {
+//     println!("Name {}", user.name);
+// }
 
-fn main() {
-    let user: User = User {
-        name: String::from("Seydou"),
-    };
-    display(&user);
-    println!("Name {}", user.name);
+// fn main() {
+//     let user: User = User {
+//         name: String::from("Seydou"),
+//     };
+//     display(&user);
+//     println!("Name {}", user.name);
+// }
+
+//OwnerShip:
+fn main() {}
+//LifeTime (duree de vie) :
+fn plus_long<'a>(x: &'a str, y: &'a str) -> &'a str {
+    if x.len() > y.len() { x } else { y }
 }
