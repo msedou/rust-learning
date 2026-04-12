@@ -204,10 +204,25 @@
 //     display(&user);
 //     println!("Name {}", user.name);
 // }
-
 //OwnerShip:
-fn main() {}
-//LifeTime (duree de vie) :
-fn plus_long<'a>(x: &'a str, y: &'a str) -> &'a str {
-    if x.len() > y.len() { x } else { y }
+
+fn get_user(id: i32) -> Option<String> {
+    if id == 2 {
+        Some(String::from("Seydou MANE"))
+    } else {
+        None
+    }
+}
+
+fn get_user2(id: i32) -> Result<i32, &'static str> {
+    if id == 0 {
+        return Err("Erreur");
+    }
+    Ok(id)
+}
+fn main() {
+    match get_user(1) {
+        Some(name) => println!("User {}", name),
+        None => println!("User not found !"),
+    }
 }
