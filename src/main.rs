@@ -206,23 +206,38 @@
 // }
 //OwnerShip:
 
-fn get_user(id: i32) -> Option<String> {
-    if id == 2 {
-        Some(String::from("Seydou MANE"))
-    } else {
-        None
-    }
-}
+// fn get_user(id: i32) -> Option<String> {
+//     if id == 2 {
+//         Some(String::from("Seydou MANE"))
+//     } else {
+//         None
+//     }
+// }
 
-fn get_user2(id: i32) -> Result<i32, &'static str> {
-    if id == 0 {
-        return Err("Erreur");
-    }
-    Ok(id)
-}
+// fn get_user2(id: i32) -> Result<i32, &'static str> {
+//     if id == 0 {
+//         return Err("Erreur");
+//     }
+//     Ok(id)
+// }
+// fn main() {
+//     match get_user(1) {
+//         Some(name) => println!("User {}", name),
+//         None => println!("User not found !"),
+//     }
+// }
+
+mod math;
+use math::divide;
+use math::multiply;
+use math::subtract;
 fn main() {
-    match get_user(1) {
-        Some(name) => println!("User {}", name),
-        None => println!("User not found !"),
-    }
+    let result = math::add(1, 2);
+    println!("1 + 2 = {}", result);
+    let result = subtract(1, 2);
+    println!("1 - 2 = {}", result);
+    let result = multiply(1, 2);
+    println!("1 * 2 = {}", result);
+    let result = divide(1, 2);
+    println!("1 / 2 = {}", result);
 }
