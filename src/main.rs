@@ -227,12 +227,12 @@
 //     }
 // }
 
-mod math;
-use math::divide;
-use math::multiply;
-use math::subtract;
+mod utils;
+use utils::math::divide;
+use utils::math::multiply;
+use utils::math::subtract;
 fn main() {
-    let result = math::add(1, 2);
+    let result = add(1, 2);
     println!("1 + 2 = {}", result);
     let result = subtract(1, 2);
     println!("1 - 2 = {}", result);
