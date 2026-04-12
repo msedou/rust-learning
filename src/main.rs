@@ -228,10 +228,16 @@
 // }
 
 mod utils;
+use utils::math::add;
 use utils::math::divide;
 use utils::math::multiply;
 use utils::math::subtract;
+
+use user::service::get_user;
+
 fn main() {
+    let user = get_user();
+    println!("User {}", user);
     let result = add(1, 2);
     println!("1 + 2 = {}", result);
     let result = subtract(1, 2);
