@@ -227,23 +227,38 @@
 //     }
 // }
 
-mod utils;
-use utils::math::add;
-use utils::math::divide;
-use utils::math::multiply;
-use utils::math::subtract;
+// mod utils;
+// use utils::math::add;
+// use utils::math::divide;
+// use utils::math::multiply;
+// use utils::math::subtract;
 
-use user::service::get_user;
+// use user::service::get_user;
 
+// fn main() {
+//     let user = get_user();
+//     println!("User {}", user);
+//     let result = add(1, 2);
+//     println!("1 + 2 = {}", result);
+//     let result = subtract(1, 2);
+//     println!("1 - 2 = {}", result);
+//     let result = multiply(1, 2);
+//     println!("1 * 2 = {}", result);
+//     let result = divide(1, 2);
+//     println!("1 / 2 = {}", result);
+// }
+
+mod user;
+use std::io;
+use user::service::{create_user, display_user};
 fn main() {
-    let user = get_user();
-    println!("User {}", user);
-    let result = add(1, 2);
-    println!("1 + 2 = {}", result);
-    let result = subtract(1, 2);
-    println!("1 - 2 = {}", result);
-    let result = multiply(1, 2);
-    println!("1 * 2 = {}", result);
-    let result = divide(1, 2);
-    println!("1 / 2 = {}", result);
+    print!("=========Enter your Name============: ");
+    let mut name: String = String::new();
+    io::stdin().read_line(&mut name).expect("Erreur");
+    print!("=========Enter your Age============: ");
+    let mut age_input: String = String::new();
+    io::stdin().read_line(&mut age_input).expect("Erreur");
+    let age: u32 = age_input.trim().parse().expect("Nombre invalid !");
+    let user = create_user(name.trim().to_string(), age);
+    display_user(&user);
 }
