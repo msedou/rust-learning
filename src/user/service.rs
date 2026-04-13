@@ -1,7 +1,7 @@
 use super::model::User;
-fn get_user() -> String {
-    String::from("Seydou")
-}
+// fn get_user() -> String {
+//     String::from("Seydou")
+// }
 pub fn create_user(name: String, age: u32) -> User {
     User { name, age }
 }

@@ -252,10 +252,15 @@ mod user;
 use std::io;
 use user::service::{create_user, display_user};
 fn main() {
-    print!("=========Enter your Name============: ");
+    println!("=========Enter your Name============: ");
     let mut name: String = String::new();
     io::stdin().read_line(&mut name).expect("Erreur");
-    print!("=========Enter your Age============: ");
+    match name.trim().parse::<String>() {
+        Ok(name_input) => println!("Your are write {} ", name_input),
+        Err(e) => println!("Erreur ({}) : Can your write a valid name", e),
+    }
+
+    println!("=========Enter your Age============: ");
     let mut age_input: String = String::new();
     io::stdin().read_line(&mut age_input).expect("Erreur");
     let age: u32 = age_input.trim().parse().expect("Nombre invalid !");
